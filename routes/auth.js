@@ -34,7 +34,7 @@ else{
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3001/auth/google/callback"
+    callbackURL: "https://voting-app-armadillo.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
 
