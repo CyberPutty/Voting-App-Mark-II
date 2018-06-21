@@ -20,12 +20,18 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-
+let redirect;
+if(process.env.NODE_ENV=== 'production'){
+  redirect= '/';
+}
+else{
+  redirect='http://localhost:3001'
+}
 
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3001/auth/google/callback"
+    callbackURL: redirect+"/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
 
@@ -56,10 +62,10 @@ passport.use(new GoogleStrategy({
 router.get('/google',passport.authenticate('google', { scope: ['profile'] ,prompt: 'select_account' }));
 
 router.get('/google/callback', 
-  passport.authenticate('google', { failureRedirect: 'http://localhost:3000' }),
+  passport.authenticate('google', { failureRedirect: redirect }),
   function(req, res) {
     
-    res.redirect('http://localhost:3000');
+    res.redirect(redirect);
   });
 
 

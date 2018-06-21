@@ -7,12 +7,19 @@ const mongoose= require('mongoose');
 /* GET users listing. */
 const models= require('../models');
 
+//
 
-
-
-router.get('/', function(req, res, next) {
+if(process.env.NODE_ENV=== 'production'){
+  router.get('/', function(req, res, next) {
+    res.redirect('/');
+  });
+}
+else{
+  router.get('/', function(req, res, next) {
   res.redirect('http://localhost:3000/users');
 });
+}
+
 
 router.post('/posts/delete',function(req,res){
 console.log(req.body);
