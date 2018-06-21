@@ -7,9 +7,7 @@ if (req.user){
 }
 res.json({failed:'not logged in'});
 });
-router.get('/',function(req,res){
-    
-})
+
 
 
 module.exports = router;
