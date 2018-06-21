@@ -14,11 +14,22 @@ justify-content: space-between;
 background-color: #009ddc;
 padding-right: 30px;
 }
+.googlebutton{
+ font-size: 20px;
+ width : 50%;
+ height: 30px;
+  background-color: #f23630;
+  margin: auto;
+margin-top: 20px;
+border-radius: 10px;
+}
 
 .userlogin{
 display: flex;
 flex-direction: row;
 width: 200px;
+justify-content: center;
+
 
 }
 .navSwitch

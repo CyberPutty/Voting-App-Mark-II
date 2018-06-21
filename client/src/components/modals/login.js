@@ -17,9 +17,9 @@ responseGoogle = () => {
             <div >
           
             <ModalWrapper {...this.props} showOk={false} width={400}>
-           
-<a href={'https://voting-app-armadillo.herokuapp.com/auth/google'}>login</a>
-
+           <div className="googlebutton">
+<a href={'https://voting-app-armadillo.herokuapp.com/auth/google'}>Login with Google</a>
+</div>
              <p>{this.props.credentialFail}</p>
            </ModalWrapper>
             
