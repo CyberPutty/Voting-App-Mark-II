@@ -1,7 +1,6 @@
 
-  require('dotenv').load();
-
-
+ 
+ require('dotenv').load();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -41,21 +40,13 @@ app.use(session({
   resave: false, //don't save session if unmodified
  // store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
-
-
 
 app.use('/profile', indexRouter);
 app.use('/auth',authRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
-
-
-
-
-
 
 app.get('/*', function (req, res) {
   res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
@@ -73,7 +64,10 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.status.json({
+    message: err.message,
+    error: err
+});
 });
 
 module.exports = app;
