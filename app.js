@@ -49,8 +49,9 @@ app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
+/// adding this
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
