@@ -18,7 +18,7 @@ responseGoogle = () => {
           
             <ModalWrapper {...this.props} showOk={false} width={400}>
            
-<a href={'http://localhost:3001/auth/google'}>login</a>
+<a href={'https://voting-app-armadillo.herokuapp.com/auth/google'}>login</a>
 
              <p>{this.props.credentialFail}</p>
            </ModalWrapper>
