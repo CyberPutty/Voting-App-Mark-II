@@ -37,6 +37,7 @@ render(){
                 return <Entry index={index}  />;
             })}
             <button onClick={this.props.removeSelection}>remove</button>
+            
             <button onClick={this.props.addSelection}>new option</button>
             <button type="submit">create Poll</button>
         </form>

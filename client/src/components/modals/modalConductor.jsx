@@ -23,11 +23,11 @@ const ModalConductor=(props)=>{
      hideModal={props.hideModal}  
      responseGoogle={props.loginGoogle}
      credentialFail={props.credentialFail}/>
-    case "SIGNUP":
-       return <Signup 
-       hideModal={props.hideModal} 
-       responseGoogle={props.signupGoogle}
-       credentialFail={props.credentialFail}/> 
+    // case "SIGNUP":
+    //    return <Signup 
+    //    hideModal={props.hideModal} 
+    //    responseGoogle={props.signupGoogle}
+    //    credentialFail={props.credentialFail}/> 
     case 'POLL_NEW':
     return <PollNew
     size={'data'}

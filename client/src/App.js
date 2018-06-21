@@ -105,11 +105,14 @@ console.log('hi');
   addSelection = (event) => {
     event.preventDefault();
     const entries = this.state.userEntries;
-    entries.push(entries.length);
+    if(entries.length<5){
+entries.push(entries.length);
     console.log(entries);
     this.setState({
       userEntries: entries
     });
+    }
+    
   }
   removeSelection = (event) => {
     event.preventDefault();
@@ -235,7 +238,6 @@ else{
 
   }
   deletePoll=(event)=>{
-    
     const ID=event.target.dataset.id;
     console.log(event,ID)
     fetch('/users/posts/delete',{

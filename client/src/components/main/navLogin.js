@@ -12,8 +12,8 @@ class NavLogin extends React.Component{
 return(
 <div className="userlogin">
        <h2 id="login" onClick={this.props.handleLogin}>login</h2>
-       <h2>/</h2>
-       <h2 id="signup" onClick={this.props.handleSignup}>signup</h2>
+       {/* <h2>/</h2>
+       <h2 id="signup" onClick={this.props.handleSignup}>signup</h2> */}
        </div>
 );
 
