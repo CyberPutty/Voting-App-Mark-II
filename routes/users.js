@@ -10,10 +10,14 @@ const models= require('../models');
 //
 let redirect;
 
+if(process.env.NODE_ENV=== 'production'){
 
+  redirect='/';
+}
+else{
   redirect='http://localhost:3000/users'; 
 
-
+}
  router.get('/', function(req, res, next) {
   res.redirect(redirect);
 });

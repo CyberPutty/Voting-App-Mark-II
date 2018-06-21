@@ -23,8 +23,8 @@ mongoose.connect(process.env.MONGO_URI);
  
 var app = express();
  
- app.set('views', path.join(__dirname, 'views'));
- app.set('view engine', 'jade');
+//  app.set('views', path.join(__dirname, 'views'));
+//  app.set('view engine', 'jade');
 
  if(process.env.NODE_ENV=== 'production'){
    app.use(express.static("client/build"));
@@ -39,7 +39,7 @@ app.use(session({
   secret: 'keyboard cat',
   saveUninitialized: false, // don't create session until something stored
   resave: false, //don't save session if unmodified
-  store: new MongoStore({ mongooseConnection: mongoose.connection })
+ // store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
 app.use(passport.initialize());
@@ -47,7 +47,7 @@ app.use(passport.session());
 
 
 
-app.use('/', indexRouter);
+app.use('/profile', indexRouter);
 app.use('/auth',authRouter);
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
@@ -57,7 +57,9 @@ app.use('/posts', postsRouter);
 
 
 
-
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

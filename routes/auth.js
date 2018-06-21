@@ -21,9 +21,13 @@ passport.deserializeUser(function(id, done) {
 });
 
 let redirect;
-
-  redirect='http://localhost:3000';
-
+if(process.env.NODE_ENV=== 'production'){
+  console.log('isproduction')
+  redirect= '/';
+}
+else{
+  redirect='http://localhost:3000'
+}
 
 
 passport.use(new GoogleStrategy({
