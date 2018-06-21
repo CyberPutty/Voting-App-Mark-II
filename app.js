@@ -23,11 +23,13 @@ mongoose.connect(process.env.MONGO_URI);
  
 var app = express();
  
-//  app.set('views', path.join(__dirname, 'views'));
-//  app.set('view engine', 'jade');
+ app.set('views', path.join(__dirname, 'views'));
+ app.set('view engine', 'jade');
 
+ if(process.env.NODE_ENV=== 'production'){
+   app.use(express.static("client/build"));
+ }
 
-app.use(express.static("client/build"));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

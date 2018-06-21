@@ -21,22 +21,19 @@ passport.deserializeUser(function(id, done) {
 });
 
 let redirect;
-if(process.env.NODE_ENV=== 'production'){
-  redirect= '/';
-}
-else{
-  redirect='http://localhost:3001'
-}
+
+  redirect='http://localhost:3000';
+
 
 
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: redirect+"auth/google/callback"
+    callbackURL: "http://localhost:3001/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
 
-
+console.log(profile);
 
        models.Profile.findOne({ googleId: profile.id }, function (err, user) {
          if (err){ return (done(err))  

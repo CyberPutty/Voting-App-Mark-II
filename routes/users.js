@@ -8,18 +8,15 @@ const mongoose= require('mongoose');
 const models= require('../models');
 
 //
+let redirect;
 
-if(process.env.NODE_ENV=== 'production'){
-  router.get('/', function(req, res, next) {
-    res.redirect('/');
-  });
-}
-else{
-  router.get('/', function(req, res, next) {
-  res.redirect('http://localhost:3000/users');
+
+  redirect='http://localhost:3000/users'; 
+
+
+ router.get('/', function(req, res, next) {
+  res.redirect(redirect);
 });
-}
-
 
 router.post('/posts/delete',function(req,res){
 console.log(req.body);
