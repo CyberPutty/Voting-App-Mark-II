@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const mongoose= require('mongoose');
@@ -57,7 +58,7 @@ router.get('/google',passport.authenticate('google', { scope: ['profile'] ,promp
 router.get('/google/callback', 
   passport.authenticate('google', { failureRedirect: 'http://localhost:3000' }),
   function(req, res) {
-    console.log('success');
+    
     res.redirect('http://localhost:3000');
   });
 
