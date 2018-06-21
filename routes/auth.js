@@ -28,10 +28,11 @@ else{
   redirect='http://localhost:3001'
 }
 
+
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: redirect+"/auth/google/callback"
+    callbackURL: redirect+"auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
 
