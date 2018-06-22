@@ -150,7 +150,10 @@ redirectProfile=()=>{
 }
 
 submitVote=(body)=>{
-fetch('/posts/updateVotes',{
+console.log(body);
+
+ if (body.vote!==''){
+   fetch('/posts/updateVotes',{
   credentials : 'same-origin',
   method: 'POST',
   headers: {'content-type': 'application/json'},
@@ -173,6 +176,11 @@ fetch('/posts/updateVotes',{
   }
   
 });
+ }
+ else{
+   this.setState({modalAlert: "Please choose an option"});
+ } 
+
 }
 
 newPoll=(body)=>{

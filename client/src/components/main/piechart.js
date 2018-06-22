@@ -49,9 +49,8 @@ componentDidUpdate (prevProps, prevState) {
         const faux = this.props.connectFauxDOM('div', 'chart');
         const r = width / 2;
         const poll= [this.props.currentPoll];
-        const votes= poll[0].votes;
-        const fields= poll[0].fields;
-    
+        const votes= poll[0].votes.slice().reverse();
+        const fields= poll[0].fields.slice().reverse();
     
         const colors = ["#f26430", "#009ddc", "#6761a8", "#009b72","#2a2d34"];
     
@@ -144,8 +143,8 @@ componentDidUpdate (prevProps, prevState) {
         const faux = this.props.connectFauxDOM('div', 'chart');
         const r = width / 2;
         const poll= [this.props.currentPoll];
-        const votes= poll[0].votes;
-        const fields= poll[0].fields;
+        const votes= poll[0].votes.slice().reverse();
+        const fields= poll[0].fields.slice().reverse();
    
     
     

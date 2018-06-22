@@ -22,11 +22,14 @@ passport.deserializeUser(function(id, done) {
 });
 
 let redirect;
+let callbackUrl;
 if(process.env.NODE_ENV=== 'production'){
   console.log('isproduction')
   redirect= '/';
+  callbackUrl='https://voting-app-armadillo.herokuapp.com/auth/google/callback'
 }
 else{
+  callbackUrl='http://localhost:3001/auth/google/callback'
   redirect='http://localhost:3000'
 }
 
@@ -34,7 +37,7 @@ else{
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://voting-app-armadillo.herokuapp.com/auth/google/callback"
+    callbackURL: callbackUrl
   },
   function(accessToken, refreshToken, profile, done) {
 

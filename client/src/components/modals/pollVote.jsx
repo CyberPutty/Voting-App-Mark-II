@@ -10,6 +10,9 @@ const PollVote = (props) => {
     //     props.hideModal();
 
     // }
+
+    const handleCheck=(selected)=>{
+    }
     console.log(props.modalAlert);
     const handleSubmit= (event)=>{
    
@@ -37,9 +40,12 @@ if(props.loggedIn==false){
                     <div className="centerVoteList">
                  
                             {props.poll.fields.map(function (d,index) {
-                        
-
-                                return (<div className="radio"><p>{d}</p><input  type="radio" name="vote" value={index}/></div>);
+                             let selected= false;
+                            
+                             if (index==0){
+                                selected=true;
+                             }
+                            return (<div className="radio"><input  type="radio" name="vote" value={index} />{d}</div>);
                             })}
                        
                         <input name="id" type="hidden" value={props.poll._id}/>

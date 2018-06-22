@@ -87,7 +87,6 @@ font-size: 28px;
   width: 50%;
 }
 
-
 .renderedD3{
   margin-top: 80px;
 }
@@ -154,8 +153,20 @@ input{
 }
 .centerVoteList{
   font-size: 20px;
-  width: 200px;
+  width: 400px;
   margin:auto;
+}
+.radio{
+  display: block; 
+  text-align: left;
+  margin-left: 35%;
+
+  margin-top: 25px;
+  margin-bottom:25px;
+}
+.radio input{
+  width: auto;
+  text-align: left;
 }
 
 .showForm{

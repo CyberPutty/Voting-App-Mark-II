@@ -6,19 +6,28 @@ import { StaticRouter ,BrowserRouter, Route, Link,Redirect } from "react-router-
 
 class Login extends React.Component{
 
+
+
 responseGoogle = () => {
    
     return(<Redirect to={'/auth/google'}>Login</Redirect>);
       }
 
     render(){
-
+            let production= true;
+            let redirect;
+            if (production== false){
+                redirect = 'http://localhost:3001/auth/google';
+            }
+            else{
+                redirect= 'https://voting-app-armadillo.herokuapp.com/auth/google';
+            }
         return(
             <div >
           
             <ModalWrapper {...this.props} showOk={false} width={400}>
            <div className="googlebutton">
-<a href={'https://voting-app-armadillo.herokuapp.com/auth/google'}>Login with Google</a>
+<a href={redirect}>Login with Google</a>
 </div>
              <p>{this.props.credentialFail}</p>
            </ModalWrapper>

@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
 if (req.user){
        res.json(req.user);
 }
-res.json({failed:'not logged in'});
+ res.json({failed:'not logged in'});
 });
 
 
