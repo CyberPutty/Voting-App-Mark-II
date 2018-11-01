@@ -15,7 +15,7 @@ class App extends Component {
       pollsLatest: [],
       pollsFiltered: [],
       showForm: "hide",
-      userEntries: [],
+      userEntries: [0],
       redirect: "/",
       loggedIn: false,
       avatar: null,
@@ -184,6 +184,7 @@ console.log(body);
 }
 
 newPoll=(body)=>{
+
   fetch('/users/posts/new',{
     credentials : 'same-origin',
     method: 'POST',

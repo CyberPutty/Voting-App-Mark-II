@@ -31,15 +31,17 @@ render(){
         
 <ModalWrapper {...this.props} showOk={false} width={400}>
 <form  onSubmit={this.newPoll}>
-           <div><label>Title: </label><input name="title"/></div>
+           <div><label>Title: </label><input name="title" required/></div>
+             <Entry index={0} required/>
             {this.props.entries.map(function(entry,index){
-                
-                return <Entry index={index}  />;
+                console.log(entry);    
+                return <Entry index={index+1}  />;
             })}
-            <button onClick={this.props.removeSelection}>remove</button>
+            
             
             <button onClick={this.props.addSelection}>new option</button>
             <button type="submit">create Poll</button>
+            <button onClick={this.props.removeSelection}>remove</button>
         </form>
 </ModalWrapper>
         </div>
