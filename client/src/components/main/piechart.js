@@ -43,7 +43,7 @@ componentDidUpdate (prevProps, prevState) {
 
     }
     setChart(){
-
+        
         const width = 450;
         const height = 600;
         const faux = this.props.connectFauxDOM('div', 'chart');
@@ -57,8 +57,9 @@ componentDidUpdate (prevProps, prevState) {
     
         const chart = d3.select(faux)
         .append('svg')
-        .attr("width", width)
-        .attr("height", height);
+    
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0 0 "+width+" "+600);
         const g= chart.append('g')
         .attr("transform", "translate(" + r + "," + r + ")"); 
     

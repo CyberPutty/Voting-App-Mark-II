@@ -52,7 +52,7 @@ class App extends Component {
   }
  getLatestPolls=()=>{
   fetch('/posts',{credentials : 'same-origin'} ).then(resp => resp.json()).then(data => {
-    console.log(data);
+    console.log("fetching posts",data);
     this.setState({
       pollsFiltered: data.reverse(),
       pollsLatest: data.reverse()

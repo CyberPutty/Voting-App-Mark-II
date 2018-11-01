@@ -23,6 +23,7 @@ passport.deserializeUser(function(id, done) {
 
 let redirect;
 let callbackUrl;
+console.log(process.env.NODE_ENV);
 if(process.env.NODE_ENV=== 'production'){
   console.log('isproduction')
   redirect= '/';

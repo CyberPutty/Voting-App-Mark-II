@@ -5,20 +5,16 @@ const mongoose= require('mongoose');
 /* GET users listing. */
 const models= require('../models');
 
-
-console.log(models.Post)
-
-
-
 // /posts/latest
 
 
-router.get('/', function(req, res, next) {
- 
+router.get('/', function(req, res) {
+  
     models.Post.find({},function(err,data){
         if (err) console.log(err);
 
         // should limit to top 10. or scroll
+        console.log(data);
        res.json(data);
        });
   });

@@ -10,14 +10,15 @@ const profileSchema= mongoose.Schema({
   googleId: String
   });
 
-const commentsSchema= mongoose.Schema({
-  venueID: String,
-  user: String,
-  posted_On: Date,
-  comment: String
-});
- const models = {
-    Post: mongoose.model('Comments',commentsSchema),
+  const postSchema= mongoose.Schema({
+    title: String,
+    fields: [String],
+    created_By: String,
+    date_created: Date,
+    votes: [Number]
+  });
+   const models = {
+  Post: mongoose.model('Post',postSchema),
     Profile: mongoose.model('Profile',profileSchema)
   };
 module.exports= models;

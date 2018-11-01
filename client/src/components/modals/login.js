@@ -14,7 +14,7 @@ responseGoogle = () => {
       }
 
     render(){
-            let production= true;
+            let production= false;
             let redirect;
             if (production== false){
                 redirect = 'http://localhost:3001/auth/google';

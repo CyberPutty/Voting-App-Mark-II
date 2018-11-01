@@ -3,6 +3,7 @@ body {
 }
 .nav {
   z-index: 1;
+
   display: flex;
   position: sticky;
   flex-direction: row;
@@ -14,6 +15,7 @@ body {
   font-size: 20px;
   width: 50%;
   height: 30px;
+  background-color: #f23630;
   margin: auto;
   margin-top: 20px;
   border-radius: 10px;
@@ -39,7 +41,7 @@ body {
 .title {
   width: 400px;
   padding-left: 30px;
-  font-size: 3em;
+  font-size: 40px;
 }
 .middlesection {
   display: flex;
@@ -51,13 +53,13 @@ body {
   flex-direction: column;
   margin: 30px;
   padding: 0px;
-  border: 3px solid #009ddc;
+  border: 2px solid #009ddc;
   border-radius: 10px;
   border-bottom-right-radius: 0px;
   border-bottom-left-radius: 0px;
-  width: 100%; 
+  width: 100%;
   max-height: 80vh;
-  font-size: 2em;
+  font-size: 28px;
 }
 
 .pollsList {
@@ -67,7 +69,6 @@ body {
 .search {
   background-color: #009ddc;
   margin: 0px;
-  
   border-radius: 8px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -80,17 +81,11 @@ body {
 }
 
 .renderedD3 {
-  /* 
-  vertical-align: center;
-  margin: auto;
-  margin-top: 10%;
-  margin-bottom: 10%; */
-  width: 50vh;
-  margin: auto;
+  margin-top: 80px;
 }
 .piechart {
-  margin: auto;
-  width: 100%; 
+  text-align: center;
+  width: 100%;
 }
 button {
   border-style: none;
@@ -98,7 +93,6 @@ button {
   border-radius: 5px;
   font-size: 20px;
 }
-
 input {
   border-radius: 5px;
   border-style: none;
@@ -124,10 +118,10 @@ input {
 .data {
   border: 2px solid #6761a8;
   border-radius: 10px;
-  /* min-height: 800px; */
+  min-height: 800px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   margin: auto;
   width: 600px;
   background-color: #e7ecef;
@@ -150,16 +144,14 @@ input {
 }
 .centerVoteList {
   font-size: 20px;
-  width: 100%;
+  width: 400px;
   margin: auto;
-}
-.centerVoteList button{
-  text-align: center;
 }
 .radio {
   display: block;
   text-align: left;
-  
+  margin-left: 35%;
+
   margin-top: 25px;
   margin-bottom: 25px;
 }
@@ -167,16 +159,7 @@ input {
   width: auto;
   text-align: left;
 }
-header{
-  text-align:center;
-}
-.search div{
- flex-grow: 2;
- font-size:1.2em;
-}
-.search h2{
-  flex-grow: 2;
-}
+
 .showForm {
   opacity: 1;
   top: 100px;
@@ -208,7 +191,7 @@ header{
   flex-grow: 3;
 }
 .vote {
-  
+  width: 100px;
   border-left: 2px solid #009ddc;
   border-bottom: 2px solid #009ddc;
 }
@@ -226,52 +209,4 @@ header{
 }
 .profile img {
   margin-top: 30px;
-}
-@media screen and (max-width: 1000px){
-  .middlesection {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .polls {
-    font-size:1em; 
-    max-height: 50vh;
-    width:auto;
-  }
-  .title{
-    font-size:2em;
-  }
-  .renderedD3 {
-    width: 20vh;
-  }
-}
-@media screen and (max-width: 375px){
-  .title{
-    font-size: 2em;
-  }
-  .login {
-    width: 50vw;
-  
-  }
-  .data{
-    width: 50vw;
-    font-size: 1em;
-  }
-}
-@media screen and (max-height: 600px){
-  .title{
-    font-size: 2em;
-  }
-  .polls{
-    font-size: 1em;
-  }
-  .login {
-   
-    min-height: 200px;
-  }
-  .data{
-    width: 50vw;
-    font-size: 1em;
-  }
-
 }

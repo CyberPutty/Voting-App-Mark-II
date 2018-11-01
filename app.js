@@ -14,7 +14,7 @@ var authRouter= require('./routes/auth');
 console.log(process.env.NODE_ENV);
 // view engine setup
 const session = require("express-session");
-const MongoStore = require('connect-mongo')(session);
+// const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
  
 // Basic usage
@@ -38,7 +38,7 @@ app.use(session({
   secret: 'keyboard cat',
   saveUninitialized: false, // don't create session until something stored
   resave: false, //don't save session if unmodified
- // store: new MongoStore({ mongooseConnection: mongoose.connection })
+//  store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,7 +49,6 @@ app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
 
 app.get('/*', function (req, res) {
-
   res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
 /// adding this
