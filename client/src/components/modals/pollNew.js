@@ -32,7 +32,7 @@ render(){
 <ModalWrapper {...this.props} showOk={false} width={400}>
 <form  onSubmit={this.newPoll}>
            <div><label>Title: </label><input name="title" required/></div>
-             <Entry index={0} required/>
+             <Entry index={0}/>
             {this.props.entries.map(function(entry,index){
                 console.log(entry);    
                 return <Entry index={index+1}  />;
