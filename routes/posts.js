@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
         if (err) console.log(err);
 
         // should limit to top 10. or scroll
-        console.log(data);
+     
        res.json(data);
        });
   });

@@ -27,7 +27,7 @@ console.log(process.env.NODE_ENV);
 if(process.env.NODE_ENV=== 'production'){
   console.log('isproduction')
   redirect= '/';
-  callbackUrl='https://voting-app-armadillo.herokuapp.com/auth/google/callback'
+  callbackUrl='https://afternoon-lowlands-60554.herokuapp.com/auth/google/callback'
 }
 else{
   callbackUrl='http://localhost:3001/auth/google/callback'
@@ -42,7 +42,7 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
 
-console.log(profile);
+
 
        models.Profile.findOne({ googleId: profile.id }, function (err, user) {
          if (err){ return (done(err))  

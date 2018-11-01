@@ -20,7 +20,7 @@ responseGoogle = () => {
                 redirect = 'http://localhost:3001/auth/google';
             }
             else{
-                redirect= 'https://voting-app-armadillo.herokuapp.com/auth/google';
+                redirect= 'https://afternoon-lowlands-60554.herokuapp.com/auth/google';
             }
         return(
             <div >
