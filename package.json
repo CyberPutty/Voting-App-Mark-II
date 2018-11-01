@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./bin/www",
+    "start": "node ./bin/www",
     "deploy": "cd client && npm run build && cd .. && node ./bin/www"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
     "morgan": "~1.9.0",
     "passport": "^0.4.0",
     "passport-google-oauth": "^1.0.0",
+    "react-scripts": "^2.1.1",
     "save": "^2.3.2"
   },
   "engines": {
